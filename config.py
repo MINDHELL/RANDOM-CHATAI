@@ -1,19 +1,24 @@
 import os
 
-BOT_TOKEN = "YOUR_BOT_TOKEN"
-MONGO_URL = "YOUR_MONGODB_URL"
-CHANNEL_ID = "-1002492623985"
-# Subscription settings
-FREE_LIMIT = 5  # Free users can fetch 5 files per day
-PREMIUM_LIMIT = 30  # Premium users can fetch 30 files per day
-FREE_VIDEO_LENGTH = 300  # Max 5 min video for free users (300 sec)
-PREMIUM_VIDEO_LENGTH = None  # No limit for premium users
+BOT_TOKEN = os.getenv("7725707727:AAFtx6Sy-q6GgB9eaPoN2-oYPx2D6hjnc1g")  # Get from environment variables
 
-# Payment and Contact Details
-OWNER_ID = 6860316927 # Your Telegram ID
-PAYMENT_QR_IMAGE = "https://envs.sh/apK.jpg"  # Replace this with your actual QR code file
+# MongoDB Configuration
+MONGO_URL = os.getenv("mongodb+srv://aarshhub:6L1PAPikOnAIHIRA@cluster0.6shiu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  
+DATABASE_NAME = os.getenv("Randomai2")  
 
-# Features Control
-FORCE_SUBSCRIBE = True  # Enable/Disable force subscription
-AUTO_DELETE = True  # Enable/Disable auto file deletion
-VERIFICATION_REQUIRED = True  # Enable/Disable manual user verification
+# Force Subscription (FSub)
+FORCE_SUBSCRIBE = os.getenv("FORCE_SUBSCRIBE", "True").lower() == "true"  
+FSUB_CHANNEL_ID = int(os.getenv("FSUB_CHANNEL_ID", "-1002490575006"))  
+
+# Video Indexing Channel
+INDEX_CHANNEL_ID = int(os.getenv("INDEX_CHANNEL_ID", "-1002492623985"))  
+
+# Premium System
+FREE_LIMIT = int(os.getenv("FREE_LIMIT", "5"))  
+PREMIUM_LIMIT = int(os.getenv("PREMIUM_LIMIT", "30"))  
+
+# Auto-Delete File Time (Seconds) - 0 (disabled) to 5 days (432000 seconds)
+AUTO_DELETE_TIME = int(os.getenv("AUTO_DELETE_TIME", "15"))  
+
+# Owner Special Permissions
+OWNER_ID = int(os.getenv("OWNER_ID", "6860316927"))
