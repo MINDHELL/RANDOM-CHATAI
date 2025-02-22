@@ -1,2 +1,6 @@
 python-telegram-bot==13.7
 pymongo==3.12.3
+Flask
+gunicorn
+python-telegram-bot
+pymongo
