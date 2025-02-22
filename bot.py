@@ -4,7 +4,29 @@ import time
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 from config import BOT_TOKEN, MONGO_URL, DATABASE_NAME, FORCE_SUBSCRIBE, FSUB_CHANNEL_ID, INDEX_CHANNEL_ID, AUTO_DELETE_TIME, OWNER_ID
+from flask import Flask
+import threading
+import os
+from telegram.ext import Updater
 
+app = Flask(__name__)
+
+@app.route("/")
+def health_check():
+    return "Bot is running!", 200  # Health check response
+
+def run_flask():
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
+def run_bot():
+    TOKEN = "7725707727:AAFtx6Sy-q6GgB9eaPoN2-oYPx2D6hjnc1g"
+    updater = Updater(TOKEN, use_context=True)
+    updater.start_polling()
+    updater.idle()
+
+if __name__ == "__main__":
+    threading.Thread(target=run_flask).start()  # Start Flask server in a thread
+    run_bot()  # Start Telegram bot
 # Connect to MongoDB
 client = pymongo.MongoClient(MONGO_URL)
 db = client[DATABASE_NAME]
