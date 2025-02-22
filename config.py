@@ -1,6 +1,6 @@
 import os
 
-BOT_TOKEN = os.getenv("7725707727:AAFtx6Sy-q6GgB9eaPoN2-oYPx2D6hjnc1g")  # Get from environment variables
+BOT_TOKEN = "7725707727:AAFtx6Sy-q6GgB9eaPoN2-oYPx2D6hjnc1g"  # Get from environment variables
 
 # MongoDB Configuration
 MONGO_URL = os.getenv("mongodb+srv://aarshhub:6L1PAPikOnAIHIRA@cluster0.6shiu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  
