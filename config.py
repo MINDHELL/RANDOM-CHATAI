@@ -4,7 +4,7 @@ BOT_TOKEN = os.getenv("7725707727:AAFtx6Sy-q6GgB9eaPoN2-oYPx2D6hjnc1g")  # Get f
 
 # MongoDB Configuration
 MONGO_URL = os.getenv("mongodb+srv://aarshhub:6L1PAPikOnAIHIRA@cluster0.6shiu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  
-DATABASE_NAME = os.getenv("Randomai2")  
+DATABASE_NAME = os.getenv("DATABASE_NAME", "Randomai2")  
 
 # Force Subscription (FSub)
 FORCE_SUBSCRIBE = os.getenv("FORCE_SUBSCRIBE", "True").lower() == "true"  
