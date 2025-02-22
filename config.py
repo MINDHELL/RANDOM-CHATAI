@@ -2,7 +2,7 @@ import os
 
 BOT_TOKEN = "YOUR_BOT_TOKEN"
 MONGO_URL = "YOUR_MONGODB_URL"
-
+CHANNEL_ID = "-100"
 # Subscription settings
 FREE_LIMIT = 5  # Free users can fetch 5 files per day
 PREMIUM_LIMIT = 30  # Premium users can fetch 30 files per day
